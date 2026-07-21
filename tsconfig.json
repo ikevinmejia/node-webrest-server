@@ -1,9 +1,23 @@
 {
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"],
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "rootDir": "src",
-    "outDir": "dist/",
+    "types": ["node", "jest"],
+    "ignoreDeprecations": "6.0",
+
+    "target": "ES2023",
+
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    "rootDir": ".",
+    "outDir": "./dist",
+
+    "paths": { "*": ["./*"] },
+    // "paths": {
+    //   "@generated/*": ["prisma/generated/*"]
+    // },
+
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
