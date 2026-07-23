@@ -81,7 +81,7 @@ describe("Todo route testing", () => {
     const { body } = await request(testServer.app)
       .post(`/api/todos`)
       .send({})
-      .expect(500);
+      .expect(400);
 
     expect(body).toEqual({ error: "Text property is required" });
   });
@@ -138,7 +138,7 @@ describe("Todo route testing", () => {
     const { body } = await request(testServer.app)
       .put(`/api/todos/${todoId}`)
       .send({})
-      .expect(404);
+      .expect(400);
 
     expect(body).toEqual({ error: `Id must be a valid number` });
   });
